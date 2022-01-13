@@ -10,4 +10,6 @@ Some other info:
 > and here's my favorite football team:
 ![Image](https://s.hdnux.com/photos/01/10/10/12/18907835/3/rawImage.jpg)
 
-This is my update through VSCode.
+This is my update through VSCode.\
+
+Here's a [Screenshot from Lab 1.](Screenshot(31).png)
