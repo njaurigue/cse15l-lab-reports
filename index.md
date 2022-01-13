@@ -12,4 +12,4 @@ Some other info:
 
 This is my update through VSCode.\
 
-Here's a [Screenshot from Lab 1.](Screenshot(31).png)
+Here's a Screenshot from Lab 1![Screenshot](Screenshot(31).png)
