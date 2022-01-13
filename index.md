@@ -1,7 +1,7 @@
 # Hello!
 ## Welcome!
 This is **index.md!**
-I'm *Noah Jaurigue*
+I'm *Noah Jaurigue*!
 Some other info:
 * 1st Year
 * Computer Science Major
