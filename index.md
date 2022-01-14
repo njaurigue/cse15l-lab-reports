@@ -10,4 +10,4 @@ Some other info:
 > and here's my favorite football team:
 ![Image](https://s.hdnux.com/photos/01/10/10/12/18907835/3/rawImage.jpg)
 
-[Lab Report 1](lab-report-1-week-2.html)
+[Lab Report 1](https://noahdj37.github.io/cse15l-lab-reports/lab-report-1-week-2.html)
