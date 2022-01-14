@@ -8,5 +8,12 @@ Accessing a remote server to run files from ur local machine is a process that r
 * Setup an SSH Key
 * Optimize Remote Running
 
+## Installing VSCode
+## Connecting to a Remote Server
+## Running Commands
+## Move Files
+## Setting Up an SSH Key
+## Optimizing Remote Running
+
 Here's a Screenshot from Lab 1![Screenshot](Screenshot(31).png)
 [*Back to main*](https://njaurigue.github.io/cse15l-lab-reports/index.html)
