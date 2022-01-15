@@ -28,11 +28,56 @@ Next, open VSCode and open a terminal in the top left, or with (Ctrl + Shift + `
 
 We'll now begin by running our first command:\
 `$ ssh cs15lwi22AAA@ieng6.ucsd.edu`\
+\
 This "ssh" command connects us to the server, and you will likely encounter a message ensuring you wish to connect to this server, since it is your first time. In this case, through the terminal, respond "yes". It will then prompt you for your password, and once entering, you will finally be logged into a remote server!
-## Running Commands
-## Move Files
-## Setting Up an SSH Key
-## Optimizing Remote Running
 
-Here's a Screenshot from Lab 1![Screenshot](Screenshot(31).png)
+![firstSSH](firstSSH.png)
+## Running Commands
+Now that we've connected to the server, running commands through the terminal of the client (your computer!) will actually run on the server. As such, it's important to remember when you are running commands on the client versus the server. \
+\
+Let's practice with the following commands, listed with their respective purposes:
+* `cd folderName` - enters directory to specified folder (folderName)
+* `mkdir dirName` - creates directory with specified name (dirName)
+* `ls` - lists all files in the current directory
+* `pwd` - prints working directory
+* `scp` - creates a secure copy of the specified file
+* `exit` - logs out of the remote server
+![practiceCommands.png](practiceCommands.png)
+
+Now that we've gotten use to running commands on the remote server, let's take a look at how we can move local files over to the server, in order to run them remotely.
+
+## Move Files
+To copy files over to the remote server, we'll be using the command `scp`, which will be ran from the client to send over to the server.\
+\
+The command will be ran in the following format, in this case we are copying the file "WhereAmI.java":\
+`scp WhereAmI.java cs15lwi22AAA@ieng6.ucsd.edu:~/`
+
+![scpCommand](scpCommand.png)
+
+This will create a secury copy on the remote server, and you can now run the copied .java file remotely!
+## Setting Up an SSH Key
+An annoying hassle of using `ssh` and `scp` is the constant logging in and out of the remote server, which will repeatedly prompt you for your password. This can take crucial time out of your workflow when jumping between systems. As such, a solution comes in the form of SSH keys. The program `ssh-keygen` produces a pair of keys: a public key to live on the server, and a private key to live on the client. This file pairing replaces your password, allowing you to work more efficiently with the remote server.\
+\
+To setup an SSH key, run the following command:\
+`ssh-keygen`
+
+When prompted to setup a password, simply press enter. This bypasses the need for a password next time you log in. You will now have both keys currently on your system. The next step is to copy over the public key to the `.ssh` directory of the server.\
+\
+First, login to the remote server. Next, we'll create a directory for the key to reside in:\
+`$ mkdir .ssh`
+
+Then, log back out and copy over the public file (named id_rsa.pub) from the client terminal to the server:\
+`scp /Users/noahd/.ssh/is_rsa.pub/cs15lwi22@ieng6.ucsd.edu:~/.ssh/authorized_keys`
+
+Next time you `ssh`, you will be quickly logged in without the need to provide your password:
+
+![sshKey.png](sshKey.png)
+
+## Optimizing Remote Running
+Improving your workflow between the client and server is important when deciding to run programs remotely. One way this can be done is by combining multiple commands into a single line, to limit the number of individual commands the user needs to pass. To begin, when initially SSH'ing, you can follow your account name with a command between `""`, such as `"ls"`, to immediately run once logged in. You can also combine multiple commands into a single line by dividing them with `;`. The following example shows these two tips combined into a single terminal line:\
+`$ ssh cs15lwiAAA@ieng6.ucsd.edu "ls; javac WhereAmI.java; java WhereAmI"`
+
+![combineCommands.png](combineCommands.png)
+
+---
 [*Back to main*](https://njaurigue.github.io/cse15l-lab-reports/index.html)
