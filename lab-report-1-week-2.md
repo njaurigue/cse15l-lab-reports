@@ -42,6 +42,7 @@ Let's practice with the following commands, listed with their respective purpose
 * `pwd` - prints working directory
 * `scp` - creates a secure copy of the specified file
 * `exit` - logs out of the remote server
+
 ![practiceCommands.png](practiceCommands.png)
 
 Now that we've gotten use to running commands on the remote server, let's take a look at how we can move local files over to the server, in order to run them remotely.
@@ -74,10 +75,16 @@ Next time you `ssh`, you will be quickly logged in without the need to provide y
 ![sshKey.png](sshKey.png)
 
 ## Optimizing Remote Running
-Improving your workflow between the client and server is important when deciding to run programs remotely. One way this can be done is by combining multiple commands into a single line, to limit the number of individual commands the user needs to pass. To begin, when initially SSH'ing, you can follow your account name with a command between `""`, such as `"ls"`, to immediately run once logged in. You can also combine multiple commands into a single line by dividing them with `;`. The following example shows these two tips combined into a single terminal line:\
-`$ ssh cs15lwiAAA@ieng6.ucsd.edu "ls; javac WhereAmI.java; java WhereAmI"`
+Improving your workflow between the client and server is important when deciding to run programs remotely. When you need to repeatedly alternate between making changes and running your program, it can take a considerable amount of time to complete the required task. Logging in, typing out commands, viewing the output, and making necessary changes can take away from your workflow when not completed efficiently. 
+
+In our own testing, the entire process of making a single change to a file and running the program can take upwards of 40 seconds. This process also requires over 150 keystrokes for a single change, and considerably more depending on the changes that must be made to the file. When done repeatedly over the course of an entire project, this is obviously a considerable amount of time. Cutting these losses down is an important aspect of using remote access efficiently.
+
+One way this can be done is by combining multiple commands into a single line, to limit the number of individual commands the user needs to pass. To begin, when initially SSH'ing, you can follow your account name with a command between `""`, such as `"ls"`, to immediately run once logged in. You can also combine multiple commands into a single line by dividing them with `;`. The following example shows these two tips combined into a single terminal line:\
+`$ ssh cs15lwi22AAA@ieng6.ucsd.edu "ls; javac WhereAmI.java; java WhereAmI"`
 
 ![combineCommands.png](combineCommands.png)
+
+With these changes, our keystroke count for logging in, compiling, and running shrinks from over 150 keystrokes to just 72 in a single command!
 
 ---
 [*Back to main*](https://njaurigue.github.io/cse15l-lab-reports/index.html)
