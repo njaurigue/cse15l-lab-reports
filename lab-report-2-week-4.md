@@ -38,7 +38,7 @@ In order to fix this case, we recognized the reasons that our program was failin
 [imageName](link)
 ```  
 
-If there were additional text between the closing bracket, `]`, and the opening parentheses, `(`, then the text within the parentheses should not be included in the output. For example, for [*test-file5.md*](https://github.com/njaurigue/markdown-parse/blob/main/test-file5.md), the expected output would be an empty array.  
+If there were additional text between the closing bracket, `]`, and the opening parentheses, `(`, then the text within the parentheses should not be included in the output. For instance, with [*test-file5.md*](https://github.com/njaurigue/markdown-parse/blob/main/test-file5.md), the expected output would be an empty array.  
 
 **test-file5.md:**
 ```
