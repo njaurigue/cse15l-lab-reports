@@ -87,4 +87,4 @@ One way this can be done is by combining multiple commands into a single line, t
 With these changes, our keystroke count for logging in, compiling, and running shrinks from over 150 keystrokes to just 72 in a single command!
 
 ---
-[*Back to main*](https://njaurigue.github.io/cse15l-lab-reports/index.html)
+[*Back to Main*](https://njaurigue.github.io/cse15l-lab-reports/index.html)

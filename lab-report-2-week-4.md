@@ -25,4 +25,7 @@ Prior to fixing this case, MarkdownParse was including this link in the output, 
 
 In order to fix this case, we recognized the reasons that our program was failing. Originally, `test-file6.md` was a failure-inducing input because our program had no ability to differentiate between image links and regular links, and instead included both due to their coherence to the `[imageName](link)` formatting. We recognized the symptom as `[page.com]` being our output, when it should be `[]`. As such, we included code that first checked for an exclamation point, `!`, prior to the opening bracket, `[`, of each link to fix our bug and ensure we only added non-image links:
 
-![imageLinks](images\lab2-imageLinks.png)
+![imageLinks](images\lab2-imageLinks.png)  
+
+---
+[*Back to Main*](https://njaurigue.github.io/cse15l-lab-reports/index.html) 
