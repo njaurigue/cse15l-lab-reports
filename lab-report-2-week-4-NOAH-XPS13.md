@@ -64,24 +64,23 @@ To resolve this, we first looked at why **MarkdownParse** believed `page.com` wa
 ![linkFormatting](images\lab2-linkFormatting.png)
 
 ## Example 3: Broken Links
-In our final example, out failure-inducing input is caused by incorrect link formatting. As mentioned previously, a valid link must follow the `[]()` pattern, and any incomplete iteration of this pattern should be considered a broken link and excluded from the output.  
-
-In the file [*test-file7.md*](https://github.com/njaurigue/markdown-parse/blob/main/test-file7.md) below, because the file lacks the correct formatting for a complete link, our expected output is an empty array.
+In our final example, we observe a file that contains some punctuation required for a complete link, but not all. As a result, we are left with a broken link, which should not be included in the ouput of **MarkdownParse**. The file [*test-file7.md*](https://github.com/njaurigue/markdown-parse/blob/main/test-file7.md) includes an example of this:
 
 **test-file7.md:**
 ```
 )[
 ```
 
-**Expected output for test-file7.md:**
+**Expected output for test-flile7.md:**
 ```
 []
 ```
-Instead, **MarkdownParse** got stuck in an infinite loop, after searching continuously for the remaining characters of the link pattern:
+
+Before implementing our fix, running **MarkdownParse** on *test-file7.md* resulted in no output due to an infinite loop:
 
 ![brokenLinksFailure](images\lab2-brokenLinksFailure.png)
 
-Fixing this case began with examining the while loop of **MarkdownParse**. Our test file was a failure-inducing input due to the lack of a complete link pattern, which forced the program to continuously search for characters that aren't actually present in the file. The infinite loop that this caused is our symptom, signaling us to the following fix. By first checking for the presence of all 4 characters of the link pattern, `[]()`, we can ensure that our link search will only continue if the appropriate characters are present, thus resolving the bug:
+Our solution for broken links began with observing the failure-inducing input. Because *test-file7.md* did not include all the necessary punctuation for valid links, `[]()`, the while loop of the original
 
 ![brokenLinks](images\lab2-brokenLinks.png)
 
