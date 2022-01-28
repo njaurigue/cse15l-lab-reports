@@ -13,6 +13,7 @@ An expectation of **MarkdownParse** is to exclude all image links from the outpu
 **test-file6.md:**  
 ```
 # title
+
 ![link](page.com)
 ```
 
@@ -28,5 +29,32 @@ In order to fix this case, we recognized the reasons that our program was failin
 
 ![imageLinks](images\lab2-imageLinks.png)  
 
+## Example 2: Link Formatting
+**MarkdownParse** utilizes the specific formatting and syntax of markdown files to identify links throughout the file. The formatting for these links is defined as a pair of brackets directly followed by parentheses, as shown in the following example:  
+
+```
+[imageName](link)
+```  
+
+If there were additional text between the closing bracket, `]`, and the opening parentheses, `(`, then the text within the parentheses should not be included in the output. For example, for [*test-file5.md*](https://github.com/njaurigue/markdown-parse/blob/main/test-file5.md), the expected output would be an empty array.  
+
+```
+# title
+
+[stuff]
+
+paragraph
+
+(page.com)
+```  
+
+Instead, as a result of this failure-inducing input, `page.com ` was once again included in our output:  
+
+![linkFormattingFailure](images\lab2-linkFormattingFailure.png)  
+
+To resolve this, we first looked at why **MarkdownParse** believed `page.com` was a link. We understood that the order of brackets and parentheses `[]()` was correct, however the spacing between them was not, resulting in the above symptom. By observing this output, we recognized that `]` and `(` must be adjacent in order to be a vaild link. As such, this bug was fixed by ensuring each potential link had the appropriate space between the closing bracket and opening parentheses with the following code:
+
+![linkFormatting](images\lab2-linkFormatting.png)
+
 ---
-[*Back to Main*](https://njaurigue.github.io/cse15l-lab-reports/index.html) 
+[*Back to Main*](https://njaurigue.github.io/cse15l-lab-reports/index.html)
