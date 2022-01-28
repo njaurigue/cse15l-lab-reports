@@ -4,7 +4,8 @@ In Labs 3 and 4, we explored different unique cases for the **MarkdownParse.java
 Ex: `![here's an image!](image.url)`  
 2. A file that follows the link format, but with additional text between parentheses and brackets  
 Ex: `[thisIsNotALink] Here's a sentence. (notALink)`
-3. A file that contains no links at all
+3. A file that contains no links at all  
+Ex: `There are no links here )[`
 
 With these examples, we systematically tested each case to locate the failure-inducing inputs, symptoms, and bugs in order to make the appropriate changes required to get the expected output.  
 
