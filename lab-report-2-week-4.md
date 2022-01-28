@@ -1,5 +1,5 @@
 # Lab Report 2: Week 4 - Debugging
-In Labs 3 and 4, we explored different unique cases for the **MarkdownParse.java** file, which is designed to return all links (*excluding images*) of a given file. In the following report, we'll take a closer look at the following 3 examples:
+In Labs 3 and 4, we explored different input cases for the **MarkdownParse.java** file, which is designed to return all links (*excluding images*) of a given file. In the following report, we'll take a closer look at the following 3 examples, which required futher alterations to **MarkdownParse.java** to return the expected output:
 1. A file that includes image links  
 `![here's an image!](image.url)`  
 2. A file that follows the link format, but with additional text between parentheses and brackets  
@@ -27,7 +27,7 @@ Prior to fixing this case, **MarkdownParse** was including this link in the outp
 
 ![imageLinksFailure](images\lab2-imageLinksFailure.png)  
 
-In order to fix this case, we recognized the reasons that our program was failing. Originally, *test-file6.md* was a failure-inducing input because our program had no ability to differentiate between image links and regular links, and instead included both due to their coherence to the `[imageName](link)` formatting. We recognized the symptom as `[page.com]` being our output, when it should be `[]`. As such, we included code that first checked for an exclamation point, `!`, prior to the opening bracket, `[`, of each link to fix our bug and ensure we only added non-image links:
+In order to fix this case, we recognized the reasons that our program was failing. Originally, *test-file6.md* was a failure-inducing input because our program had no ability to differentiate between image links and regular links, and instead included both due to their coherence to the `[]()` formatting. We recognized the symptom as `[page.com]` being our output, when it should be `[]`. As such, we included code that first checked for an exclamation point, `!`, prior to the opening bracket, `[`, of each link to fix our bug and ensure we only added non-image links:
 
 ![imageLinks](images\lab2-imageLinks.png)  
 
@@ -65,7 +65,7 @@ To resolve this, we first looked at why **MarkdownParse** believed `page.com` wa
 ![linkFormatting](images\lab2-linkFormatting.png)
 
 ## Example 3: Broken Links
-In our final example, out failure-inducing input is caused by incorrect link formatting. As mentioned previously, a valid link must follow the `[]()` pattern, and any incomplete iteration of this pattern should be considered a broken link and excluded from the output.  
+In our final example, out failure-inducing input wass caused by incorrect link formatting. As mentioned previously, a valid link must follow the `[]()` pattern, and any incomplete iteration of this pattern should be considered a broken link and therefore excluded from the output.  
 
 In the file [*test-file7.md*](https://github.com/njaurigue/markdown-parse/blob/main/test-file7.md) below, because the file lacks the correct formatting for a complete link, our expected output is an empty array.
 
@@ -82,7 +82,7 @@ Instead, **MarkdownParse** got stuck in an infinite loop, after searching contin
 
 ![brokenLinksFailure](images\lab2-brokenLinksFailure.png)
 
-Fixing this case began with examining the while loop of **MarkdownParse**. Our test file was a failure-inducing input due to the lack of a complete link pattern, which forced the program to continuously search for characters that aren't actually present in the file. The infinite loop that this caused is our symptom, signaling us to the following fix. By first checking for the presence of all 4 characters of the link pattern, `[]()`, we can ensure that our link search will only continue if the appropriate characters are present, thus resolving the bug:
+Fixing this case began with examining the while loop of **MarkdownParse**. Our test file was a failure-inducing input due to the lack of a complete link pattern, which forced the program to continuously search for characters that aren't actually present in the file. Our symptom was the resulting infinite loop, signaling us to the following fix. By first checking for the presence of all 4 characters of the link pattern, `[]()`, we could ensure that our link search would only continue if the appropriate characters were present, thus resolving the bug:
 
 ![brokenLinks](images\lab2-brokenLinks.png)
 
