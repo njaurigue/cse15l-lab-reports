@@ -1,8 +1,7 @@
-# Hello!
-## Welcome!
-This is **index.md!**
-I'm *Noah Jaurigue*!
-Some other info:
+# Welcome!
+This is **Noah Jaurigue's** webpage.
+
+About me:
 * 1st Year
 * Computer Science Major
 * Warren College
