@@ -17,7 +17,7 @@ With this file, we can now use the command `ssh ieng6` to login to our remote ac
 
 By combining this command with commands we've learned previously, we can run commands remotely in a single command line, further reducing the steps and time required to work effectively. In the following example, we copied over a local file to the remote account in a single command line:  
 
-![lab3-scpCommand.png](images\lab3-scpCommand.png)
+![lab3-scpCommand.png](lab3-scpCommand.png)
 
 ---
 [*Back to Main*](https://njaurigue.github.io/cse15l-lab-reports/index.html)
