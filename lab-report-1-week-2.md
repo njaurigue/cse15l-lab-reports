@@ -82,7 +82,7 @@ In our own testing, with the WhereAmI.java file mentioned earlier, the entire pr
 One way this can be done is by combining multiple commands into a single line, to limit the number of individual commands the user needs to pass. To begin, when initially SSH'ing, you can follow your account name with a command between `""`, such as `"ls"`, to immediately run once logged in. You can also combine multiple commands into a single line by dividing them with `;`. The following example shows these two tips combined into a single terminal line:\
 `$ ssh cs15lwi22AAA@ieng6.ucsd.edu "ls; javac WhereAmI.java; java WhereAmI"`
 
-![combineCommands.png](https://github.com/njaurigue/cse15l-lab-reports/blob/main/images/lab1-combineCommands.png)
+![combineCommands.png](images/lab1-combineCommands.png)
 
 With these changes, our keystroke count for logging in, compiling, and running shrinks from over 150 keystrokes to just 72 in a single command!
 
