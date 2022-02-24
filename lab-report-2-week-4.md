@@ -25,11 +25,11 @@ An expectation of **MarkdownParse** is to exclude all image links from the outpu
 ```  
 Prior to fixing this case, **MarkdownParse** was including this link in the output, returning:  
 
-![imageLinksFailure](images\lab2-imageLinksFailure.png)  
+![imageLinksFailure](images/lab2-imageLinksFailure.png)  
 
 In order to fix this case, we recognized the reasons that our program was failing. Originally, *test-file6.md* was a failure-inducing input because our program had no ability to differentiate between image links and regular links, and instead included both due to their coherence to the `[]()` formatting. We recognized the symptom as `[page.com]` being our output, when it should be `[]`. As such, we included code that first checked for an exclamation point, `!`, prior to the opening bracket, `[`, of each link to fix our bug and ensure we only added non-image links:
 
-![imageLinks](images\lab2-imageLinks.png)  
+![imageLinks](images/lab2-imageLinks.png)  
 
 ## Example 2: Link Formatting
 **MarkdownParse** utilizes the specific formatting and syntax of markdown files to identify links throughout the file. The formatting for these links is defined as brackets directly followed by parentheses, as shown in the following example:  
@@ -58,11 +58,11 @@ paragraph
 
 Instead, as a result of this failure-inducing input, `page.com` was once again included in our output:  
 
-![linkFormattingFailure](images\lab2-linkFormattingFailure.png)  
+![linkFormattingFailure](images/lab2-linkFormattingFailure.png)  
 
 To resolve this, we first looked at why **MarkdownParse** believed `page.com` was a link. We understood that the order of brackets and parentheses was correct, however the spacing between them was not, resulting in the above symptom. By observing this output, we recognized that `]` and `(` must be adjacent in order to be a vaild link. As such, this bug was fixed by ensuring each potential link had the appropriate space between the closing bracket and opening parentheses with the following code:
 
-![linkFormatting](images\lab2-linkFormatting.png)
+![linkFormatting](images/lab2-linkFormatting.png)
 
 ## Example 3: Broken Links
 In our final example, out failure-inducing input wass caused by incorrect link formatting. As mentioned previously, a valid link must follow the `[]()` pattern, and any incomplete iteration of this pattern should be considered a broken link and therefore excluded from the output.  
@@ -80,11 +80,11 @@ In the file [*test-file7.md*](https://github.com/njaurigue/markdown-parse/blob/m
 ```
 Instead, **MarkdownParse** got stuck in an infinite loop, after searching continuously for the remaining characters of the link pattern:
 
-![brokenLinksFailure](images\lab2-brokenLinksFailure.png)
+![brokenLinksFailure](images/lab2-brokenLinksFailure.png)
 
 Fixing this case began with examining the while loop of **MarkdownParse**. Our test file was a failure-inducing input due to the lack of a complete link pattern, which forced the program to continuously search for characters that aren't actually present in the file. Our symptom was the resulting infinite loop, signaling us to the following fix. By first checking for the presence of all 4 characters of the link pattern, `[]()`, we could ensure that our link search would only continue if the appropriate characters were present, thus resolving the bug:
 
-![brokenLinks](images\lab2-brokenLinks.png)
+![brokenLinks](images/lab2-brokenLinks.png)
 
 ---
 [*Back to Main*](https://njaurigue.github.io/cse15l-lab-reports/index.html)

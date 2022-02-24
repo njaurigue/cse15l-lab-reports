@@ -11,7 +11,7 @@ Accessing a remote server to run files from ur local machine is a process that r
 ## Installing VSCode
 The first step in accessing a remote server is downloading an IDE, or integrated development environment. IDEs allow us to edit and save the files we work with, as well as interact with our programs thorugh the terminal. In this case, we'll be using VSCode, which can be downloaded for your system [here](https://code.visualstudio.com/download).\
 \
-![vscodeDownload.png](images\lab1-vscodeDownload.png)
+![vscodeDownload.png](images/lab1-vscodeDownload.png)
 \
 \
 Once your downloaded has completed, open VSCode. You'll be using VSCode to interact with the server from your device, which we'll refer to as the "client" from now on.
@@ -31,7 +31,7 @@ We'll now begin by running our first command:\
 \
 This "ssh" command connects us to the server, and you will likely encounter a message ensuring you wish to connect to this server, since it is your first time. In this case, through the terminal, respond "yes". It will then prompt you for your password, and once entering, you will finally be logged into a remote server!
 
-![firstSSH](images\lab1-firstSSH.png)
+![firstSSH](images/lab1-firstSSH.png)
 ## Running Commands
 Now that we've connected to the server, running commands through the terminal of the client (your computer!) will actually run on the server. As such, it's important to remember when you are running commands on the client versus the server. \
 \
@@ -43,7 +43,7 @@ Let's practice with the following commands, listed with their respective purpose
 * `scp` - creates a secure copy of the specified file
 * `exit` - logs out of the remote server
 
-![practiceCommands.png](images\lab1-practiceCommands.png)
+![practiceCommands.png](images/lab1-practiceCommands.png)
 
 Now that we've gotten use to running commands on the remote server, let's take a look at how we can move local files over to the server, in order to run them remotely.
 
@@ -53,7 +53,7 @@ To copy files over to the remote server, we'll be using the command `scp`, which
 The command will be ran in the following format, in this case we are copying the file "WhereAmI.java":\
 `scp WhereAmI.java cs15lwi22AAA@ieng6.ucsd.edu:~/`
 
-![scpCommand](images\lab1-scpCommand.png)
+![scpCommand](images/lab1-scpCommand.png)
 
 This will create a secury copy on the remote server, and you can now run the copied .java file remotely!
 ## Setting Up an SSH Key
@@ -72,7 +72,7 @@ Then, log back out and copy over the public file (named id_rsa.pub) from the cli
 
 Next time you `ssh`, you will be quickly logged in without the need to provide your password:
 
-![sshKey.png](images\lab1-sshKey.png)
+![sshKey.png](images/lab1-sshKey.png)
 
 ## Optimizing Remote Running
 Improving your workflow between the client and server is important when deciding to run programs remotely. When you need to repeatedly alternate between making changes and running your program, it can take a considerable amount of time to complete the required task. Logging in, typing out commands, viewing the output, and making necessary changes can take away from your workflow when not completed efficiently. 
