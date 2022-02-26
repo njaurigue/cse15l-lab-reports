@@ -1,4 +1,4 @@
-# Lab Report 4: Week 8 - MarkdownParse Testing  
+# Lab Report 4: Week 8 - MarkdownParse Tests  
 For the last 7 weeks, we've been working with the MarkdownParse program, which which returns all valid links within a given markdown, `.md`, file. Below are two repositories, containing my personal repository of the program along with another student's repository, which we reviewed during our Week 7 lab session.
 
 My Implementation of MarkdownParse:
