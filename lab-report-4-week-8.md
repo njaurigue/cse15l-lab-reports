@@ -20,7 +20,7 @@ In the following report, we will review 3 markdown snippets, each with unique ca
 [`code]`](ucsd.edu)
 ```    
 ### Expectation
-In this first snippet, the unique behavior being tested with MarkdownParse is the use of code within the link (denoted by a backtick) in lines 1 and 2, as well as unmatched opening and closing brackets in lines 3 and 4. When reviewing the markdown preview window in VSCode, which allows us to visualize the expected behavior for markdown files (especially valid links in this scenario) we find that the links in lines 2, 3, and 4 should all be returned by MarkdownParse, while "url.com" in line 1 is invalid, and should therefore be omitted.  
+In this first snippet, the unique behavior being tested with MarkdownParse is the use of code within the link (denoted by a backtick) in lines 1 and 2, as well as unmatched opening and closing brackets in lines 3 and 4. When reviewing the markdown preview window in VSCode, which allows us to visualize the expected behavior for markdown files (especially valid links in this scenario) we find that the links in lines 2, 3, and 4 should all be returned by MarkdownParse, while "url.com" in line 1 is invalid and should therefore be omitted.  
 
 ### Testing
 To appropriately test these markdown characteristics, we added the following test to both implementations of MarkdownParse:  
