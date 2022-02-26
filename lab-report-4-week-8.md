@@ -120,5 +120,6 @@ Both tests failed in the `testSnippet3` method.
 ### Solutions  
 A potential solution for these cases would be to consolidate links by removing spaces and new lines from the fronts and ends of all links. This can be done in a few lines using the `trim()` or `replaceAll()` methods. In this way, we can view potential links in their simplest form, without cluttering items surrounding them. 
 
+
 ---
 [*Back to Main*](https://njaurigue.github.io/cse15l-lab-reports/index.html)
