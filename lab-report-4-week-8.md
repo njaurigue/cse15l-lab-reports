@@ -100,7 +100,7 @@ And then there's more text
 ```  
 
 ### Expectation
-The third and final snippet is testing links containing large spaces and new lines within both names and links. With our understanding of markdown link behavior, these new lines and spaces should not affect their validity as links.By observing the VSCode preview, we confirmed that `https://www.twitter.com`, `https://ucsd-cse15l-w22.github.io/`, and `https://cse.ucsd.edu/` should be included in our output as links, while `github.com` is excluded for missing a closing parentheses.
+The third and final snippet is testing links containing large spaces and new lines within both names and links. With our understanding of markdown link behavior, these new lines and spaces should not affect their validity as links. By observing the VSCode preview, we confirmed that `https://ucsd-cse15l-w22.github.io/` is the only valid link and should be included in our output, while `github.com`, `https://www.twitter.com`, and `https://cse.ucsd.edu/` are all excluded.
 
 ### Testing  
 
