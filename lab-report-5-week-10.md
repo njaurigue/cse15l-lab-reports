@@ -4,7 +4,7 @@ In our Week 9 Lab, we used a Bash script to run different implementations of `Ma
 
 ## Test File 1 - 194.md  
 
-By using the `diff` command, we can compare our output files from both implementations of `MarkdownParse.java. With this command, we found that line 212 of our test files contained differing outouts:  
+By using the `diff` command, we can compare our output files from both implementations of `MarkdownParse.java`. With this command, we found that line 212 of our test files contained differing outouts:  
 
 **Personal Implementation:** `[]`  
 **Provided Implementation:** `[url]`  
@@ -12,7 +12,7 @@ By using the `diff` command, we can compare our output files from both implement
 Using the command below, we opened up our output files to the specified line to examine which test file resulted in these outputs:
 
 ```
-vim +212 results1.txt
+$ vim +212 results1.txt
 ```  
 
 At this point, we could then see that `194.md` was the test file below which produced the above outputs.  
@@ -27,7 +27,7 @@ Next, we used VSCode's preview window to see what should be considered a valid o
 
 ![lab5-194preview.md](images/lab5-194preview.png)  
 
-As such, there are changes that should be made to both files in order to ensure a correct output. In this case, we'll be looking at the provided output and see a potential fix to resolve this bug.  
+As such, there are changes that should be made to both files in order to ensure a correct output. In this case, we'll be looking at the provided implementation and see a potential fix to resolve this bug.  
 
 In the case of `194.md`, it seems as though markdown accessed the link by viewing the text between single quotations. As such, we could somehow add a check to MarkdownParse.java to check for text between single quotations in a similar way to how we examined text between parentheses (pictured below). In this way, we can see which punctuation encapsulates the intended link, then parse the appropriate text based on this information.
 
@@ -43,7 +43,7 @@ Using the `diff` command as mentioned previously, we also found a discrepancy at
 We then accessed our output file precisely at line 230 with the following command:  
 
 ```
-vim +230 results1.txt
+$ vim +230 results1.txt
 ```  
 
 We then found that `201.md` below was the input causing a differing output array for our two implementations of MarkdownParse.java.  
@@ -60,7 +60,7 @@ Using the VSCode preview once again, we found that the correct output based on m
 
 Therefore, our personal implementation has the correct output for this test file. We'll take a look at the provided implementation again to see potential fixes for the false output.  
 
-When examining the first line of `201.md`, it's clear to see that "baz" should not be included as a link, because it includes text between the closing bracket and opening parentheses. As such, we should add code to the provided implementation that ensures the indicies of these punctuation marks are adjacent to one another, similar to our own implementation as pictured below.  
+When examining the first line of `201.md`, it's clear to see that "baz" should not be included as a link, because it includes text between the closing bracket and opening parentheses. As such, we should add code to the provided implementation that ensures the indices of these punctuation marks are adjacent to one another, similar to our own implementation as pictured below.  
 
 ![lab5-fix2.png](images/lab5-fix2.png)  
 
