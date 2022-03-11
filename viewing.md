@@ -2,7 +2,6 @@
 
 [Foo*bar\]]
 
-
 [foo]: <bar>(baz)
 
 [foo]
